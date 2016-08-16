@@ -53,6 +53,7 @@ class DogsController < ControllerBase
       redirect_to "/dogs"
     else
       flash.now[:errors] = @dog.errors
+      debugger
       render :new
     end
   end
