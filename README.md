@@ -7,22 +7,21 @@ A lightweight Ruby MVC framework inspired by Rails.
 ### CSRF protection
 
 ```Ruby
-def invoke_action(name)
-  unless @req.request_method == 'GET'
+require_relative '../models/cat'
 
-    if protect_from_forgery?
-      check_authenticity_token
-    else
-      form_authenticity_token
-    end
+class DogesController < ControllerBase
 
+  def create
+    verify_authenticity_token
+    @Doge = Doge.new(name: params["name"], wow_id: params["wow_id"])
+    @Doge.save
+
+    render :show
   end
 
-  self.send(name)
-  render(name) unless already_built_response?
 end
 ```
-Ensures no none 'GET' action can be done without authenticity token being checked
+Simply include  ```verify_authenticity_token``` to ensures no none 'GET' action can be done without authenticity token being checked
 
 ### Session
 
@@ -60,4 +59,31 @@ Including contents in your app/public and it will automatically be served as a s
 
 ## Installation
 
-Fork this repo!
+1. Fork or clone this repo.
+2. run ```bundle install```
+3. make a controller
+```
+# app/controllers/doges_controller.rb
+
+require_relative 'lib/controller_base'
+require_relative '../models/doge'
+
+class DogesController < ControllerBase
+  def index
+    @doges = Doge.all
+
+    render :index
+  end
+end
+```
+4. construct a route
+```
+# config/routes.rb
+
+ROUTER.draw do
+  get Regexp.new("^/doges$"), DogesController, :index
+  get Regexp.new("^/doges/new$"), DogesController, :new
+  post Regexp.new("^/doges$"), DogesController, :create
+end
+```
+5. start the server with ```bundle exec rackup config/server.rb```
