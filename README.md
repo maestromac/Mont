@@ -62,28 +62,30 @@ Including contents in your app/public and it will automatically be served as a s
 1. Fork or clone this repo.
 2. run ```bundle install```
 3. make a controller
-```
-# app/controllers/doges_controller.rb
 
-require_relative 'lib/controller_base'
-require_relative '../models/doge'
+  ```
+  # app/controllers/doges_controller.rb
 
-class DogesController < ControllerBase
-  def index
-    @doges = Doge.all
+  require_relative 'lib/controller_base'
+  require_relative '../models/doge'
 
-    render :index
+  class DogesController < ControllerBase
+    def index
+      @doges = Doge.all
+
+      render :index
+    end
   end
-end
-```
+  ```
 4. construct a route
-```
-# config/routes.rb
 
-ROUTER.draw do
-  get Regexp.new("^/doges$"), DogesController, :index
-  get Regexp.new("^/doges/new$"), DogesController, :new
-  post Regexp.new("^/doges$"), DogesController, :create
-end
-```
+  ```
+  # config/routes.rb
+
+  ROUTER.draw do
+    get Regexp.new("^/doges$"), DogesController, :index
+    get Regexp.new("^/doges/new$"), DogesController, :new
+    post Regexp.new("^/doges$"), DogesController, :create
+  end
+  ```
 5. start the server with ```bundle exec rackup config/server.rb```
