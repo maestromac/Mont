@@ -89,3 +89,12 @@ Including contents in your app/public and it will automatically be served as a s
   end
   ```
 5. start the server with ```bundle exec rackup config/server.rb```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/maestromac/Mont.
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
