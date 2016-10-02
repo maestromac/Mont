@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    mont (0.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -13,6 +18,7 @@ GEM
     json (1.8.3)
     minitest (5.9.0)
     rack (1.6.4)
+    rake (10.4.2)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -34,6 +40,12 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (< 5.0)
+  bundler (~> 1.12)
   byebug
+  mont!
   rack (< 2.0)
+  rake (~> 10.0)
   rspec (~> 3.1.0)
+
+BUNDLED WITH
+   1.12.5
