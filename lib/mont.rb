@@ -1,6 +1,7 @@
 require "mont/version"
+require "cli"
+require "sails/cli/my_sails"
 
 module Mont
-  # Your code goes here...
-  
+  # Refer to Cli.rb
 end

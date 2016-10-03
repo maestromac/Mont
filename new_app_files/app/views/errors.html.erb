@@ -1,0 +1,12 @@
+<h2>Error Message</h2>
+<p><%= @message %></p>
+
+<h2>Stack Trace</h2>
+<ul>
+<% @backtrace.each do |trace| %>
+  <li><%= trace %></li>
+<% end %>
+</ul>
+
+<h3>Preview of Problematic Code</h3>
+<p><%= @preview %></p>

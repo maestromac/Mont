@@ -49,10 +49,10 @@ app
 └─── public
       ├── doge
       |    └── much-wow.jpg
-      └── summer
-            └── june
-                ├── sandle.png
-                └── italian-ice.jpg
+      └── music
+            └── Darude
+                ├── Sandstorm.mp3
+                └── Rush.mp3
 ```
 Including contents in your app/public and it will automatically be served as a static assets.
 
