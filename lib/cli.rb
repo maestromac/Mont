@@ -1,5 +1,5 @@
 require 'thor'
-require 'sails/cli/my_sails'
+require 'mont/my_mont'
 
 module Mont
   class MyCli < Thor
