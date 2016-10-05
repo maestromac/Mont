@@ -15,7 +15,6 @@ end
 
 class Generator < Thor
   include Thor::Actions
-
   def self.source_root
     File.dirname(__FILE__)
   end
