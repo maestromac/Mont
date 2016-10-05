@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require 'mont'
 
-Mont::MyCLI.start(ARGV)
+Mont::MyCLI.start( ARGV )
