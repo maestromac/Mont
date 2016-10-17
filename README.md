@@ -60,7 +60,7 @@ Including contents in your app/public and it will automatically be served as a s
 ## Installation
 
 1. run ```gem install mont```
-2. run ```mont install {your preferred app name}```
+2. run ```mont new {your preferred app name}```
 3. make a controller
 
   ```
